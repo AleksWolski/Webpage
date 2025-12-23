@@ -12,20 +12,23 @@ const flowchartSteps = [
 const AnimatedSinusoid = ({ 
   id = "movingGradient", 
   color = "#fcd34d",
-  flipped = false 
+  flipped = false,
+  label,
+  labelPosition = "left"
 }: { 
   id?: string; 
   color?: string;
   flipped?: boolean;
+  label?: string;
+  labelPosition?: "left" | "right";
 }) => {
   return (
     <div className="py-4 flex flex-col items-center">
       <svg 
-        width="120" 
+        width={label ? "180" : "120"} 
         height="80" 
-        viewBox="0 0 120 80" 
+        viewBox={label ? "0 0 180 80" : "0 0 120 80"} 
         className="overflow-visible"
-        style={flipped ? { transform: 'scaleX(-1)' } : undefined}
       >
         <defs>
           <linearGradient id={id} x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
@@ -43,14 +46,44 @@ const AnimatedSinusoid = ({
             </stop>
           </linearGradient>
         </defs>
+        
+        {/* Label text with animation */}
+        {label && (
+          <text 
+            x={labelPosition === "left" ? "25" : "155"} 
+            y="45" 
+            fill={color}
+            fontSize="14"
+            fontWeight="500"
+            textAnchor={labelPosition === "left" ? "end" : "start"}
+            opacity="0"
+          >
+            {label}
+            <animate 
+              attributeName="opacity" 
+              values="0;0;1;1;0;0" 
+              keyTimes="0;0.1;0.2;0.4;0.5;1"
+              dur="3s" 
+              repeatCount="indefinite" 
+              calcMode="linear"
+              begin="0s"
+            />
+          </text>
+        )}
+        
         {/* Static sinusoidal path */}
-        <path
-          d="M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80"
-          stroke={`url(#${id})`}
-          strokeWidth="3"
-          fill="none"
-          strokeLinecap="round"
-        />
+        <g style={flipped ? { transform: 'scaleX(-1)', transformOrigin: 'center' } : undefined}>
+          <path
+            d={label 
+              ? "M90 0 C90 5, 90 8, 90 10 C65 15, 65 25, 90 30 C115 35, 115 45, 90 50 C65 55, 65 65, 90 70 C90 72, 90 75, 90 80"
+              : "M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80"
+            }
+            stroke={`url(#${id})`}
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </g>
       </svg>
     </div>
   );
@@ -104,7 +137,7 @@ const ResearchSection = () => {
                   </div>
                   {index < flowchartSteps.length - 1 && (
                     index === 0 ? (
-                      <AnimatedSinusoid id="movingGradient1" />
+                      <AnimatedSinusoid id="movingGradient1" label="Inputs" />
                     ) : index === 1 ? (
                       <DualSinusoid />
                     ) : (
