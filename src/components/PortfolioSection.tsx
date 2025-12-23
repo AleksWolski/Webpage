@@ -4,39 +4,41 @@ import { ExternalLink, FileText, Calendar, GraduationCap } from "lucide-react";
 
 const publications = [
   {
-    title: "Data-Driven Control of Continuous-Time LTI Systems",
-    journal: "IEEE Transactions on Automatic Control",
-    year: "2024",
+    title:
+      "Yet Another Continuous-Time Fundamental Lemma: A Modulating Functions Approach with Applications to Electrical Motors",
+    journal: "",
+    year: "TBC",
     abstract:
-      "A novel framework for synthesizing stabilizing controllers directly from input-output trajectories without prior system identification.",
-    tags: ["Control Theory", "Data-Driven", "LTI Systems"],
+      "We sample using modulating functions one sufficiently informative input-output trajectory of a linear time-invariant system. We show that such data can be used to represent every polynomial series representation of every input-output trajectory of the system.",
+    tags: ["Modulating Functions", "Data-Driven Control", "PMSM"],
     link: "#",
   },
   {
-    title: "Robust Identification from Noisy Data",
-    journal: "Automatica",
-    year: "2023",
+    title: "Finite-frame data-driven simulation and norm-optimal output tracking for quarter-plane causal 2D systems",
+    journal: "International Journal of Control",
+    year: "TBC",
     abstract:
-      "Developing noise-resilient algorithms for continuous-time system identification with guaranteed error bounds.",
+      "We are given:  sufficiently informative input-output data  from a quarter-plane causal $2D$ system; boundary conditions; and an input-sequence over a finite extent set of $\Z \times \Z$. We  compute from such data a local solution to the (unknown) system of partial difference equations governing the system (\emph{data-driven simulation}). Given a quadratic cost and a reference  trajectory, we compute from the data an input-output trajectory locally satisfying the system equations, that minimizes the quadratic cost (\emph{optimal output-tracking problem}). ",
     tags: ["System Identification", "Robust Methods", "Continuous-Time"],
     link: "#",
   },
   {
-    title: "Simulation Without Models: A Data-Centric Approach",
-    journal: "IFAC World Congress",
-    year: "2023",
+    title: "Gramian-Based Data-Driven ILC for Continuous-Time Systems",
+    journal: "9th IFAC Symposium on System Structure and Control SSSC 2025",
+    year: "2025",
     abstract:
-      "Enabling accurate system simulation using only measured data, bypassing traditional model-building steps.",
-    tags: ["Simulation", "Data-Driven", "Model-Free"],
-    link: "#",
+      "We present a data-driven Iterative Learning Control (ILC) scheme for continuous-time systems using a ‘Gramian’ approach. We present some numerical experiments using Chebyshev Polynomial Orthogonal Bases (CPOB) in both model-driven and data-driven ILC for continuous-time systems. We show that in the model-driven ILC case, the utilisation of a CPOB framework results in improved performance over discrete-time methods for applications requiring high precision. In the data-driven case, the advantages of a CPOB approach are less evident and we discuss some of the open problems being investigated.",
+    tags: ["Iterative Learning Control", "Data-Driven Control"],
+    link: "#https://www.sciencedirect.com/science/article/pii/S2405896325013552",
   },
   {
-    title: "Behavioral Framework for LTI System Analysis",
-    journal: "Systems & Control Letters",
-    year: "2022",
-    abstract: "Extending behavioral systems theory to accommodate data-driven representations of dynamical systems.",
-    tags: ["Behavioral Theory", "LTI Systems", "Analysis"],
-    link: "#",
+    title: "Data-Driven Model Predictive Control for Continuous-Time Systems",
+    journal: "2024 IEEE 63rd Conference on Decision and Control (CDC)",
+    year: "2024",
+    abstract:
+      "We present some preliminary ideas on a data-driven Model Predictive Control framework for continuous-time systems. We use Chebyshev polynomial orthogonal bases to represent system trajectories and subsequently develop a data-driven continuous-time version of the classical Model Predictive Control algorithm. We investigate the effects of the parameters in our framework with two numerical examples and draw comparison to model-driven MPC schemes.",
+    tags: ["Model Prective Control", "Data-Driven Control"],
+    link: "#https://ieeexplore.ieee.org/abstract/document/10886618",
   },
 ];
 
