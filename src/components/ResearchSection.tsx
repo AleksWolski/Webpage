@@ -1,22 +1,6 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 
-const MatrixDisplay = () => {
-  return (
-    <div className="py-6 flex justify-center">
-      <div className="flex items-center text-primary font-mono text-lg">
-        <span className="text-2xl mr-1">[</span>
-        <div className="grid grid-cols-4 gap-x-3 gap-y-1">
-          {Array.from({ length: 16 }).map((_, i) => (
-            <span key={i} className="text-center">•</span>
-          ))}
-        </div>
-        <span className="text-2xl ml-1">]</span>
-      </div>
-    </div>
-  );
-};
-
 const flowchartSteps = [
   'Persistently Exciting Input',
   'Linear Time-Invariant Continuous-Time System',
@@ -381,6 +365,30 @@ const DualSinusoid = () => {
           <path d="M69 0 C69 5, 69 8, 69 10 C44 15, 44 25, 69 30 C94 35, 94 45, 69 50 C44 55, 44 65, 69 70 C69 72, 69 75, 69 80" stroke="url(#movingGradient2b5)" strokeWidth="3" fill="none" strokeLinecap="round" />
         </g>
       </svg>
+    </div>
+  );
+};
+
+const MatrixDisplay = () => {
+  return (
+    <div className="py-4 flex flex-col items-center">
+      {/* Cable bundles above matrix */}
+      <DualSinusoid />
+      
+      {/* 3x3 Matrix with full-height brackets */}
+      <div className="flex justify-center items-stretch">
+        <svg width="12" height="60" viewBox="0 0 12 60" className="text-primary">
+          <path d="M10 2 L4 2 L4 58 L10 58" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        <div className="grid grid-cols-3 gap-x-4 gap-y-2 px-2 py-2">
+          {Array.from({ length: 9 }).map((_, i) => (
+            <span key={i} className="text-primary text-center text-lg">•</span>
+          ))}
+        </div>
+        <svg width="12" height="60" viewBox="0 0 12 60" className="text-primary">
+          <path d="M2 2 L8 2 L8 58 L2 58" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
     </div>
   );
 };
