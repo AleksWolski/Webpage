@@ -34,7 +34,6 @@ const TrackingAnimation = () => {
   const frequency = 12; // Number of wave cycles in full signal
   const initialAmplitude = 80; // Starting amplitude in pixels
   const dampingFactor = 10; // Higher = converges faster
-  const initialReveal = 0.15; // Start with 15% already revealed
 
   const { width, height } = dimensions;
   const centerX = width / 2;
@@ -43,12 +42,11 @@ const TrackingAnimation = () => {
   const visibleHeight = height * 0.75;
 
   // How much of the total damped sinusoid has been "revealed" by scrolling
-  // Start with initial reveal so animation is visible at top
-  const revealProgress = initialReveal + scrollProgress * (1 - initialReveal);
+  const revealProgress = scrollProgress;
 
   // Generate the damped sinusoidal path
   const generateSinePath = () => {
-    if (revealProgress < 0.001) return "";
+    if (revealProgress < 0.01) return "";
 
     const points: string[] = [];
     const steps = 250;
