@@ -61,7 +61,7 @@ const HeroSection = () => {
           <div className="order-1 lg:order-2 flex justify-center pt-20 lg:pt-0">
             <div className="opacity-0 animate-fade-in-up animation-delay-400 relative">
               {/* Portrait container */}
-              <div className="relative w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border border-border shadow-lg">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border border-border shadow-lg">
                 <img src={portrait} alt="Portrait" className="w-full h-full object-cover" />
               </div>
 
