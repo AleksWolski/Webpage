@@ -1,14 +1,14 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowDown, Mail, Github, Linkedin } from 'lucide-react';
-import ControlTheoryBackground from './ControlTheoryBackground';
-import portrait from '@/assets/portrait.jpg';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
+import ControlTheoryBackground from "./ControlTheoryBackground";
+import portrait from "@/assets/portrait.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <ControlTheoryBackground />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -18,18 +18,16 @@ const HeroSection = () => {
                 Engineering PhD Candidate
               </p>
             </div>
-            
+
             <h1 className="opacity-0 animate-fade-in-up animation-delay-200 font-display font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-              Data-Driven Techniques in{' '}
-              <span className="text-gradient">Applied Mathematics</span>
+              Data-Driven Techniques in <span className="text-gradient">Applied Mathematics</span>
             </h1>
-            
+
             <p className="opacity-0 animate-fade-in-up animation-delay-400 text-muted-foreground text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              Specializing in data-driven simulation, control, and identification of 
-              continuous-time linear time-invariant systems. Bridging theoretical 
-              foundations with practical applications.
+              Specializing in data-driven simulation, control, and identification of continuous-time linear
+              time-invariant systems. Bridging theoretical foundations with practical applications.
             </p>
-            
+
             <div className="opacity-0 animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button variant="hero" size="lg">
                 <Mail size={18} />
@@ -42,15 +40,15 @@ const HeroSection = () => {
 
             {/* Social Links */}
             <div className="opacity-0 animate-fade-in-up animation-delay-800 flex gap-4 mt-10 justify-center lg:justify-start">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <Github size={20} />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="text-muted-foreground hover:text-primary transition-colors duration-200"
                 aria-label="LinkedIn"
               >
@@ -63,14 +61,10 @@ const HeroSection = () => {
           <div className="order-1 lg:order-2 flex justify-center pt-20 lg:pt-0">
             <div className="opacity-0 animate-fade-in-up animation-delay-400 relative">
               {/* Portrait container */}
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border border-border shadow-lg">
-                <img 
-                  src={portrait} 
-                  alt="Portrait" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border border-border shadow-lg">
+                <img src={portrait} alt="Portrait" className="w-full h-full object-cover" />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-primary/20 rounded-full" />
               <div className="absolute -top-2 -left-2 w-12 h-12 border border-primary/10 rounded-full" />
@@ -80,7 +74,10 @@ const HeroSection = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up animation-delay-800">
-          <a href="#about" className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors duration-200">
+          <a
+            href="#about"
+            className="flex flex-col items-center text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
             <span className="text-xs font-display tracking-wider uppercase mb-2">Explore</span>
             <ArrowDown size={16} />
           </a>
