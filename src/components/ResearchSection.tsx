@@ -1,6 +1,22 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 
+const MatrixDisplay = () => {
+  return (
+    <div className="py-6 flex justify-center">
+      <div className="flex items-center text-primary font-mono text-lg">
+        <span className="text-2xl mr-1">[</span>
+        <div className="grid grid-cols-4 gap-x-3 gap-y-1">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <span key={i} className="text-center">•</span>
+          ))}
+        </div>
+        <span className="text-2xl ml-1">]</span>
+      </div>
+    </div>
+  );
+};
+
 const flowchartSteps = [
   'Persistently Exciting Input',
   'Linear Time-Invariant Continuous-Time System',
@@ -411,6 +427,8 @@ const ResearchSection = () => {
                       <TripleSinusoid />
                     ) : index === 1 ? (
                       <DualSinusoid />
+                    ) : index === 2 ? (
+                      <MatrixDisplay />
                     ) : (
                       <div className="py-6">
                         <ArrowDown className="text-primary" size={28} />
