@@ -213,7 +213,7 @@ const TripleSinusoid = () => {
   );
 };
 
-const DualSinusoid = () => {
+const DualSinusoid = ({ showLabels = true }: { showLabels?: boolean }) => {
   return (
     <div className="py-4 flex justify-center">
       <svg width="200" height="80" viewBox="0 0 200 80" className="overflow-visible max-w-full">
@@ -344,12 +344,16 @@ const DualSinusoid = () => {
         </defs>
         
         {/* Labels */}
-        <text x="25" y="45" fill="#fcd34d" fontSize="14" fontWeight="500" textAnchor="end" clipPath="url(#dualClipLabels)">
-          Inputs
-        </text>
-        <text x="175" y="45" fill="#4ade80" fontSize="14" fontWeight="500" textAnchor="start" clipPath="url(#dualClipLabels)">
-          Outputs
-        </text>
+        {showLabels && (
+          <>
+            <text x="25" y="45" fill="#fcd34d" fontSize="14" fontWeight="500" textAnchor="end" clipPath="url(#dualClipLabels)">
+              Inputs
+            </text>
+            <text x="175" y="45" fill="#4ade80" fontSize="14" fontWeight="500" textAnchor="start" clipPath="url(#dualClipLabels)">
+              Outputs
+            </text>
+          </>
+        )}
         
         {/* Yellow input cables (left side) */}
         <path d="M45 0 C45 5, 45 8, 45 10 C20 15, 20 25, 45 30 C70 35, 70 45, 45 50 C20 55, 20 65, 45 70 C45 72, 45 75, 45 80" stroke="url(#movingGradient2a1)" strokeWidth="3" fill="none" strokeLinecap="round" />
@@ -373,7 +377,7 @@ const MatrixDisplay = () => {
   return (
     <div className="py-4 flex flex-col items-center">
       {/* Cable bundles above matrix */}
-      <DualSinusoid />
+      <DualSinusoid showLabels={false} />
       
       {/* 3x3 Matrix with full-height brackets */}
       <div className="flex justify-center items-stretch">
