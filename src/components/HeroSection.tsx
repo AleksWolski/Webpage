@@ -19,9 +19,6 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <h1 className="opacity-0 animate-fade-in-up animation-delay-200 font-display font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-              Data-Driven Methods for <span className="text-gradient">Continuous-Time Systems</span>
-            </h1>
 
             <p className="opacity-0 animate-fade-in-up animation-delay-400 text-muted-foreground text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               PhD candidate under the supervision of Prof. Paolo Rapisarda and Prof. Bing Chu, specializing in data-driven simulation, control, and identification of continuous-time systems.
