@@ -8,7 +8,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-primary font-body font-medium mb-4 tracking-widest uppercase text-xs">
-            Links
+            Get in Touch
           </p>
 
           <div className="grid sm:grid-cols-3 gap-5 mb-14">
