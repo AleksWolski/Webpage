@@ -377,7 +377,7 @@ const MatrixDisplay = () => {
   return (
     <div className="py-4 flex flex-col items-center">
       {/* Cable bundles above matrix - cropped to half height */}
-      <div className="h-[50px] overflow-hidden">
+      <div className="h-[50px] overflow-hidden -mb-2">
         <DualSinusoid showLabels={false} />
       </div>
       
