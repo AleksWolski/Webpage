@@ -20,13 +20,11 @@ const HeroSection = () => {
             </div>
 
             <h1 className="opacity-0 animate-fade-in-up animation-delay-200 font-display font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-              Data-Driven Techniques in <span className="text-gradient">Applied Mathematics</span>
+              Data-Driven Methods for <span className="text-gradient">Continuous-Time Systems</span>
             </h1>
 
             <p className="opacity-0 animate-fade-in-up animation-delay-400 text-muted-foreground text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              Specializing in data-driven simulation, control, and identification of continuous-time linear
-              time-invariant systems. Bridging theoretical foundations with practical applications.
-            </p>
+              PhD candidate under the supervision of Prof. Paolo Rapisarda and Prof. Bing Chu, specializing in data-driven simulation, control, and identification of continuous-time systems.
 
             <div className="opacity-0 animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button variant="hero" size="lg">
