@@ -86,10 +86,6 @@ const PortfolioSection = () => {
                 </div>
 
                 <div className="flex md:flex-col gap-3">
-                  <Button variant="heroOutline" size="sm" className="gap-2">
-                    <FileText size={14} />
-                    PDF
-                  </Button>
                   <Button variant="ghost" size="sm" className="gap-2">
                     <ExternalLink size={14} />
                     DOI
