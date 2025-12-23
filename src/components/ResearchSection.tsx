@@ -12,23 +12,33 @@ const flowchartSteps = [
 const AnimatedSinusoid = () => {
   return (
     <div className="py-4 flex flex-col items-center">
-      <svg width="120" height="60" viewBox="0 0 120 60" className="overflow-visible">
+      <svg width="120" height="80" viewBox="0 0 120 80" className="overflow-visible">
         <defs>
           <linearGradient id="sinusoidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#f97316" />
             <stop offset="100%" stopColor="#ea580c" />
           </linearGradient>
         </defs>
+        {/* Static background path */}
         <path
-          d="M60 0 Q60 10, 60 10 C30 15, 30 25, 60 30 C90 35, 90 45, 60 50 Q60 50, 60 60"
+          d="M60 0 C60 5, 60 10, 60 15 C30 20, 30 35, 60 40 C90 45, 90 60, 60 65 C60 70, 60 75, 60 80"
+          stroke="hsl(var(--primary) / 0.2)"
+          strokeWidth="3"
+          fill="none"
+          strokeLinecap="round"
+        />
+        {/* Animated wave overlay */}
+        <path
+          d="M60 0 C60 5, 60 10, 60 15 C30 20, 30 35, 60 40 C90 45, 90 60, 60 65 C60 70, 60 75, 60 80"
           stroke="url(#sinusoidGradient)"
           strokeWidth="3"
           fill="none"
           strokeLinecap="round"
-          className="animate-sinusoid"
+          strokeDasharray="20 10"
+          className="animate-sinusoid-phase"
         />
         {/* Arrow head */}
-        <polygon points="60,60 54,50 66,50" fill="#f97316" />
+        <polygon points="60,80 54,70 66,70" fill="#f97316" />
       </svg>
     </div>
   );
@@ -40,23 +50,14 @@ const ResearchSection = () => {
       <style>{`
         @keyframes sinusoidPhase {
           0% {
-            d: path("M60 0 Q60 10, 60 10 C30 15, 30 25, 60 30 C90 35, 90 45, 60 50 Q60 50, 60 60");
-          }
-          25% {
-            d: path("M60 0 Q60 10, 60 10 C90 15, 90 25, 60 30 C30 35, 30 45, 60 50 Q60 50, 60 60");
-          }
-          50% {
-            d: path("M60 0 Q60 10, 60 10 C30 15, 30 25, 60 30 C90 35, 90 45, 60 50 Q60 50, 60 60");
-          }
-          75% {
-            d: path("M60 0 Q60 10, 60 10 C90 15, 90 25, 60 30 C30 35, 30 45, 60 50 Q60 50, 60 60");
+            stroke-dashoffset: 0;
           }
           100% {
-            d: path("M60 0 Q60 10, 60 10 C30 15, 30 25, 60 30 C90 35, 90 45, 60 50 Q60 50, 60 60");
+            stroke-dashoffset: -60;
           }
         }
-        .animate-sinusoid {
-          animation: sinusoidPhase 1s ease-in-out infinite;
+        .animate-sinusoid-phase {
+          animation: sinusoidPhase 3s linear infinite;
         }
       `}</style>
       <div className="container mx-auto px-6">
