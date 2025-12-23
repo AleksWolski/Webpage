@@ -416,6 +416,53 @@ const MatrixWithCables = () => {
           <path d="M2 2 L7 2 L7 52 L2 52" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
+      
+      {/* Cable bundle - rotated 90 degrees, pointing right */}
+      <svg 
+        width="80" 
+        height="54" 
+        viewBox="0 0 80 54" 
+        className="ml-2"
+      >
+        <defs>
+          <linearGradient 
+            id="cableBundleGradient" 
+            x1="0%" 
+            y1="0%" 
+            x2="100%" 
+            y2="0%" 
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%" stopColor="transparent">
+              <animate attributeName="offset" values="-0.35;1" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
+            </stop>
+            <stop offset="5%" stopColor="#fcd34d">
+              <animate attributeName="offset" values="-0.30;1.05" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
+            </stop>
+            <stop offset="30%" stopColor="#fcd34d">
+              <animate attributeName="offset" values="-0.05;1.30" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
+            </stop>
+            <stop offset="35%" stopColor="transparent">
+              <animate attributeName="offset" values="0;1.35" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
+            </stop>
+          </linearGradient>
+        </defs>
+        
+        {/* 3 cables going horizontally to the right */}
+        {[0, 1, 2].map((i) => {
+          const y = 20 + i * 7;
+          return (
+            <path
+              key={i}
+              d={`M0 ${y} C 20 ${y}, 40 ${y}, 70 ${y}`}
+              stroke="url(#cableBundleGradient)"
+              strokeWidth="3"
+              fill="none"
+              strokeLinecap="round"
+            />
+          );
+        })}
+      </svg>
     </div>
   );
 };
