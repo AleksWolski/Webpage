@@ -29,7 +29,7 @@ const publications = [
     abstract:
       "We present a data-driven Iterative Learning Control (ILC) scheme for continuous-time systems using a ‘Gramian’ approach. We present some numerical experiments using Chebyshev Polynomial Orthogonal Bases (CPOB) in both model-driven and data-driven ILC for continuous-time systems. We show that in the model-driven ILC case, the utilisation of a CPOB framework results in improved performance over discrete-time methods for applications requiring high precision. In the data-driven case, the advantages of a CPOB approach are less evident and we discuss some of the open problems being investigated.",
     tags: ["Iterative Learning Control", "Data-Driven Control"],
-    link: "#https://www.sciencedirect.com/science/article/pii/S2405896325013552",
+    link: "https://www.sciencedirect.com/science/article/pii/S2405896325013552",
   },
   {
     title: "Data-Driven Model Predictive Control for Continuous-Time Systems",
@@ -38,7 +38,7 @@ const publications = [
     abstract:
       "We present some preliminary ideas on a data-driven Model Predictive Control framework for continuous-time systems. We use Chebyshev polynomial orthogonal bases to represent system trajectories and subsequently develop a data-driven continuous-time version of the classical Model Predictive Control algorithm. We investigate the effects of the parameters in our framework with two numerical examples and draw comparison to model-driven MPC schemes.",
     tags: ["Model Prective Control", "Data-Driven Control"],
-    link: "#https://ieeexplore.ieee.org/abstract/document/10886618",
+    link: "https://ieeexplore.ieee.org/abstract/document/10886618",
   },
 ];
 
