@@ -12,7 +12,7 @@ const flowchartSteps = [
 const AnimatedSinusoid = () => {
   return (
     <div className="py-4 flex flex-col items-center">
-      <svg width="120" height="100" viewBox="0 0 120 100" className="overflow-visible">
+      <svg width="120" height="90" viewBox="0 0 120 90" className="overflow-visible">
         <defs>
           <linearGradient id="movingGradient" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#f97316">
@@ -34,14 +34,14 @@ const AnimatedSinusoid = () => {
         </defs>
         {/* Static sinusoidal path with straight line at end */}
         <path
-          d="M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80 L60 100"
+          d="M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80 L60 90"
           stroke="url(#movingGradient)"
           strokeWidth="3"
           fill="none"
           strokeLinecap="round"
         />
         {/* Arrow head */}
-        <polygon points="60,100 54,90 66,90" fill="#f97316" />
+        <polygon points="60,90 54,80 66,80" fill="#f97316" />
       </svg>
     </div>
   );
