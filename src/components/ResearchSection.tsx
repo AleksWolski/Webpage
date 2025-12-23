@@ -14,18 +14,31 @@ const AnimatedSinusoid = () => {
     <div className="py-4 flex flex-col items-center">
       <svg width="120" height="80" viewBox="0 0 120 80" className="overflow-visible">
         <defs>
-          <linearGradient id="sinusoidGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#f97316" />
-            <stop offset="100%" stopColor="#ea580c" />
+          <linearGradient id="movingGradient" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#f97316">
+              <animate attributeName="offset" values="-1;1" dur="2s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="25%" stopColor="#fed7aa">
+              <animate attributeName="offset" values="-0.75;1.25" dur="2s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="50%" stopColor="#f97316">
+              <animate attributeName="offset" values="-0.5;1.5" dur="2s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="75%" stopColor="#fed7aa">
+              <animate attributeName="offset" values="-0.25;1.75" dur="2s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#f97316">
+              <animate attributeName="offset" values="0;2" dur="2s" repeatCount="indefinite" />
+            </stop>
           </linearGradient>
         </defs>
-        {/* Animated wave */}
+        {/* Static sinusoidal path with animated gradient */}
         <path
-          stroke="url(#sinusoidGradient)"
+          d="M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80"
+          stroke="url(#movingGradient)"
           strokeWidth="3"
           fill="none"
           strokeLinecap="round"
-          className="animate-sinusoid-phase"
         />
         {/* Arrow head */}
         <polygon points="60,80 54,70 66,70" fill="#f97316" />
@@ -37,28 +50,6 @@ const AnimatedSinusoid = () => {
 const ResearchSection = () => {
   return (
     <section id="research" className="py-28 relative">
-      <style>{`
-        @keyframes sinusoidPhase {
-          0% {
-            d: path("M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80");
-          }
-          25% {
-            d: path("M60 0 C60 5, 60 8, 60 10 C85 15, 85 25, 60 30 C35 35, 35 45, 60 50 C85 55, 85 65, 60 70 C60 72, 60 75, 60 80");
-          }
-          50% {
-            d: path("M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80");
-          }
-          75% {
-            d: path("M60 0 C60 5, 60 8, 60 10 C85 15, 85 25, 60 30 C35 35, 35 45, 60 50 C85 55, 85 65, 60 70 C60 72, 60 75, 60 80");
-          }
-          100% {
-            d: path("M60 0 C60 5, 60 8, 60 10 C35 15, 35 25, 60 30 C85 35, 85 45, 60 50 C35 55, 35 65, 60 70 C60 72, 60 75, 60 80");
-          }
-        }
-        .animate-sinusoid-phase {
-          animation: sinusoidPhase 4s ease-in-out infinite;
-        }
-      `}</style>
       <div className="container mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-20">
