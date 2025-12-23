@@ -16,16 +16,16 @@ const AnimatedSinusoid = ({ id = "movingGradient" }: { id?: string }) => {
         <defs>
           <linearGradient id={id} x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="transparent">
-              <animate attributeName="offset" values="0;1" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
+              <animate attributeName="offset" values="-0.35;1" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
             </stop>
             <stop offset="5%" stopColor="#fcd34d">
-              <animate attributeName="offset" values="0.05;1.05" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
+              <animate attributeName="offset" values="-0.30;1.05" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
             </stop>
             <stop offset="30%" stopColor="#fcd34d">
-              <animate attributeName="offset" values="0.30;1.30" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
+              <animate attributeName="offset" values="-0.05;1.30" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
             </stop>
             <stop offset="35%" stopColor="transparent">
-              <animate attributeName="offset" values="0.35;1.35" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
+              <animate attributeName="offset" values="0;1.35" dur="2.1s" repeatCount="indefinite" calcMode="linear" />
             </stop>
           </linearGradient>
         </defs>
