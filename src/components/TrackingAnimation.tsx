@@ -89,7 +89,7 @@ const TrackingAnimation = () => {
         style={{
           height: visibleHeight,
           background:
-            "linear-gradient(to bottom, transparent 0%, hsl(210 60% 55% / 0.12) 5%, hsl(210 60% 55% / 0.12) 95%, transparent 100%)",
+            "linear-gradient(to bottom, hsl(210 60% 55% / 0.12) 0%, hsl(210 60% 55% / 0.12) 95%, transparent 100%)",
         }}
       />
 
