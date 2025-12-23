@@ -403,37 +403,13 @@ const MatrixWithCables = () => {
   return (
     <div className="py-6 flex justify-center items-center relative">
       <svg 
-        width="300" 
-        height="120" 
-        viewBox="0 0 300 120" 
+        width="100" 
+        height="60" 
+        viewBox="0 0 100 60" 
         className="overflow-visible"
       >
-        <defs>
-          <linearGradient 
-            id="cableBundleGradient" 
-            x1="0%" 
-            y1="0%" 
-            x2="100%" 
-            y2="0%" 
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="transparent">
-              <animate attributeName="offset" values="-0.35;1" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
-            </stop>
-            <stop offset="5%" stopColor="#fcd34d">
-              <animate attributeName="offset" values="-0.30;1.05" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
-            </stop>
-            <stop offset="30%" stopColor="#fcd34d">
-              <animate attributeName="offset" values="-0.05;1.30" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
-            </stop>
-            <stop offset="35%" stopColor="transparent">
-              <animate attributeName="offset" values="0;1.35" dur="5s" repeatCount="indefinite" calcMode="linear" begin="0s" />
-            </stop>
-          </linearGradient>
-        </defs>
-        
         {/* Matrix - centered */}
-        <g transform="translate(110, 33)">
+        <g transform="translate(10, 2)">
           {/* Left bracket */}
           <path d="M8 2 L3 2 L3 52 L8 52" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
           
@@ -451,24 +427,6 @@ const MatrixWithCables = () => {
           {/* Right bracket */}
           <path d="M72 2 L77 2 L77 52 L72 52" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </g>
-        
-        {/* Animated cable bundle - 3 yellow cables moving together */}
-        {[0, 1, 2].map((i) => {
-          const startY = 47 + (i - 1) * 8; // Tighter bundle spacing
-          const endY = 110;
-          // Reversed: top cable (i=0) ends leftmost, bottom cable (i=2) ends rightmost
-          const endX = 225 + (1 - i) * 5;
-          return (
-            <path
-              key={i}
-              d={`M187 ${startY} C 210 ${startY}, 225 ${startY + 25}, ${endX} ${endY}`}
-              stroke="url(#cableBundleGradient)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-            />
-          );
-        })}
       </svg>
     </div>
   );
