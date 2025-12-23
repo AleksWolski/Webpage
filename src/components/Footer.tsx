@@ -5,10 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-10 border-t border-border">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} PhD Research Portfolio
-          </p>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
           
           <div className="flex items-center gap-5">
             <a 
