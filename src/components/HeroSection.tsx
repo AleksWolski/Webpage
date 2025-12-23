@@ -25,6 +25,7 @@ const HeroSection = () => {
 
             <p className="opacity-0 animate-fade-in-up animation-delay-400 text-muted-foreground text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               PhD candidate under the supervision of Prof. Paolo Rapisarda and Prof. Bing Chu, specializing in data-driven simulation, control, and identification of continuous-time systems.
+            </p>
 
             <div className="opacity-0 animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button variant="hero" size="lg">
