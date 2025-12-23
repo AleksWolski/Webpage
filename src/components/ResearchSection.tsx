@@ -1,26 +1,11 @@
 import React from 'react';
-import { Database, GitBranch, LineChart, Cpu } from 'lucide-react';
+import { Database } from 'lucide-react';
 
 const researchAreas = [
   {
     icon: Database,
     title: 'Data-Driven Simulation',
     description: 'Developing methods to simulate system behavior directly from measured data without explicit model identification.',
-  },
-  {
-    icon: GitBranch,
-    title: 'System Identification',
-    description: 'Creating robust algorithms for identifying continuous-time LTI systems from noisy, sampled observations.',
-  },
-  {
-    icon: LineChart,
-    title: 'Control Synthesis',
-    description: 'Designing controllers based on data-driven representations that guarantee stability and performance.',
-  },
-  {
-    icon: Cpu,
-    title: 'LTI Systems',
-    description: 'Theoretical foundations of linear time-invariant systems and their data-driven characterizations.',
   },
 ];
 
