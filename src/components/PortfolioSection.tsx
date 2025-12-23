@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, Calendar, GraduationCap } from "lucide-react";
+import { ExternalLink, Calendar, GraduationCap } from "lucide-react";
+import "katex/dist/katex.min.css";
+import { InlineMath } from "react-katex";
 
 const publications = [
   {
@@ -18,7 +20,7 @@ const publications = [
     journal: "International Journal of Control",
     year: "TBC",
     abstract:
-      "We are given:  sufficiently informative input-output data  from a quarter-plane causal $2D$ system; boundary conditions; and an input-sequence over a finite extent set of $\Z \times \Z$. We  compute from such data a local solution to the (unknown) system of partial difference equations governing the system (\emph{data-driven simulation}). Given a quadratic cost and a reference  trajectory, we compute from the data an input-output trajectory locally satisfying the system equations, that minimizes the quadratic cost (\emph{optimal output-tracking problem}). ",
+      "We are given: sufficiently informative input-output data from a quarter-plane causal $2D$ system; boundary conditions; and an input-sequence over a finite extent set of $\\mathbb{Z} \\times \\mathbb{Z}$. We compute from such data a local solution to the (unknown) system of partial difference equations governing the system (data-driven simulation). Given a quadratic cost and a reference trajectory, we compute from the data an input-output trajectory locally satisfying the system equations, that minimizes the quadratic cost (optimal output-tracking problem).",
     tags: ["2D Systems", "Data-Driven Simulation", "Data-Driven Control"],
     link: "#",
   },
@@ -27,7 +29,7 @@ const publications = [
     journal: "9th IFAC Symposium on System Structure and Control SSSC 2025",
     year: "2025",
     abstract:
-      "We present a data-driven Iterative Learning Control (ILC) scheme for continuous-time systems using a ‘Gramian’ approach. We present some numerical experiments using Chebyshev Polynomial Orthogonal Bases (CPOB) in both model-driven and data-driven ILC for continuous-time systems. We show that in the model-driven ILC case, the utilisation of a CPOB framework results in improved performance over discrete-time methods for applications requiring high precision. In the data-driven case, the advantages of a CPOB approach are less evident and we discuss some of the open problems being investigated.",
+      "We present a data-driven Iterative Learning Control (ILC) scheme for continuous-time systems using a 'Gramian' approach. We present some numerical experiments using Chebyshev Polynomial Orthogonal Bases (CPOB) in both model-driven and data-driven ILC for continuous-time systems. We show that in the model-driven ILC case, the utilisation of a CPOB framework results in improved performance over discrete-time methods for applications requiring high precision. In the data-driven case, the advantages of a CPOB approach are less evident and we discuss some of the open problems being investigated.",
     tags: ["Iterative Learning Control", "Data-Driven Control"],
     link: "https://www.sciencedirect.com/science/article/pii/S2405896325013552",
   },
@@ -41,6 +43,18 @@ const publications = [
     link: "https://ieeexplore.ieee.org/abstract/document/10886618",
   },
 ];
+
+// Helper to render text with inline LaTeX ($...$)
+const renderAbstract = (text: string) => {
+  const parts = text.split(/(\$[^$]+\$)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith("$") && part.endsWith("$")) {
+      const latex = part.slice(1, -1);
+      return <InlineMath key={index} math={latex} />;
+    }
+    return <span key={index}>{part}</span>;
+  });
+};
 
 const PortfolioSection = () => {
   return (
@@ -76,7 +90,7 @@ const PortfolioSection = () => {
                     {pub.title}
                   </h3>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{pub.abstract}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">{renderAbstract(pub.abstract)}</p>
 
                   <div className="flex flex-wrap gap-2">
                     {pub.tags.map((tag) => (
