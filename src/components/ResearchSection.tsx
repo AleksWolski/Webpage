@@ -7,7 +7,7 @@ const flowchartSteps = [
   "Sufficiently Informative Input-Output Trajectory",
   "Data Matrix",
   <>
-    Characterisation of all <span className="text-red-500 font-semibold">Input</span>-
+    Characterization of all <span className="text-red-500 font-semibold">Input</span>-
     <span className="text-blue-500 font-semibold">Output</span> Trajectories of the System
   </>,
 ];
