@@ -9,7 +9,8 @@ const HeroSection = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <ControlTheoryBackground />
 
-      <div className="container mx-auto px-6 relative z-10">
+      {/*<div className="container mx-auto px-6 relative z-10">*/}
+      <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
@@ -19,9 +20,9 @@ const HeroSection = () => {
               </p>
             </div>
 
-
             <p className="opacity-0 animate-fade-in-up animation-delay-400 text-muted-foreground text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              PhD candidate under the supervision of Prof. Paolo Rapisarda and Prof. Bing Chu, specializing in data-driven simulation, control, and identification of continuous-time systems.
+              PhD candidate under the supervision of Prof. Paolo Rapisarda and Prof. Bing Chu, specializing in
+              data-driven simulation, control, and identification of continuous-time systems.
             </p>
 
             <div className="opacity-0 animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -35,7 +36,6 @@ const HeroSection = () => {
                 <a href="#portfolio">View Publications</a>
               </Button>
             </div>
-
           </div>
 
           {/* Portrait */}
@@ -52,7 +52,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
