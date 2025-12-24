@@ -1278,8 +1278,8 @@ const ResearchSection = () => {
             Data-Driven Methods for <span className="text-gradient">Continuous-Time Systems</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            My research bridges the gap between classical control theory and modern data-driven approaches, enabling
-            direct analysis and design from experimental data.
+            My research is focused on using finite data obtained from a single offline experiment to simulate, identify
+            and control continuous-time systems. Effectively, we solve linear ODEs by example.
           </p>
         </div>
 
